@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// $db = new mysqli("sql104.epizy.com", "epiz_34036901", "tNH4q0qWuV", "epiz_34036901_users");
 $db = new mysqli("localhost", "root", "", "blogs");
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
