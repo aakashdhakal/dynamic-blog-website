@@ -1,7 +1,6 @@
 <?php
 
 $conn = new mysqli("localhost", "root", "", "blogs");
-// $conn = new mysqli("sql104.epizy.com", "epiz_34036901", "tNH4q0qWuV", "epiz_34036901_users");
 $sql = "SELECT id, title, date, thumbnail, author, status, likes 
         FROM posts 
         WHERE status = '1'
