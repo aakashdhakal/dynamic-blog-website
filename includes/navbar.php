@@ -11,7 +11,7 @@
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Allison|Cute Font" />
 	<script src="https://kit.fontawesome.com/e7e64de2ec.js" crossorigin="anonymous" async></script>
-	<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/e7e64de2ec.js" crossorigin="anonymous"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8612122745618174" crossorigin="anonymous"></script>
 
 </head>

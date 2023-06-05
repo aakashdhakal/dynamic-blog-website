@@ -3,8 +3,6 @@
         <div class="left-content">
             <div class="logo-container">
                 <img src="./aakashdhakal.png" alt="">
-                <h1>Blogs</h1>
-
             </div>
             <p>A online garbage bin created because the developer was bored to dump our garbage thought. Don,t worry if you dump your thoughts here. Nobody visits even if the site is online. If you want to contact the developer/owner then below are his social links</p>
             <div class="social-links">
