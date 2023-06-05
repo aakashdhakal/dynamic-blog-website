@@ -3,6 +3,7 @@ session_start();
 echo "<script>console.log('ERROR')</script>";
 
 $db = new mysqli("localhost", "root", "", "blogs");
+// $db = new mysqli("sql104.epizy.com", "epiz_34036901", "tNH4q0qWuV", "epiz_34036901_users");
 
 if (!isset($_SESSION["username"])) {
     if (isset($_POST["username"]) && isset($_POST["password"])) {
