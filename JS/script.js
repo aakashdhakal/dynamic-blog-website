@@ -1,3 +1,5 @@
+/*  Dark Mode Toggle Code */
+
 const icons = document.querySelector(".switch");
 toggle = document.querySelector("#dark-mode-toggle");
 
@@ -38,6 +40,10 @@ darkModeToggle.addEventListener("change", () => {
 	}
 });
 
+/*  ---------------------------------------------------------------------------- */
+
+/*  Scroll To Top Code */
+
 let scrollToTop = document.querySelector(".scroll-to-top");
 
 window.addEventListener("scroll", () => {
@@ -58,6 +64,57 @@ scrollToTop.addEventListener("click", () => {
 	});
 });
 
+/*  ---------------------------------------------------------------------------- */
+
+/*  Followers Code */
+let followBtn = document.querySelectorAll(".followBtn");
+
+followBtn.forEach(function (button) {
+	button.addEventListener("click", () => {
+		let author = button.getAttribute("data-author");
+		let action = button.classList.contains("not-followed")
+			? "follow"
+			: "unfollow";
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "follow-config.php", true);
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4 && xhr.status === 200) {
+				if (xhr.responseText === "success") {
+					if (action === "follow") {
+						button.classList.remove("not-followed");
+						button.classList.add("followed");
+						button.parentNode
+							.querySelector(".followerStatus")
+							.classList.remove("fa-user-plus");
+						button.parentNode
+							.querySelector(".followerStatus")
+							.classList.add("fa-user-check");
+					} else if (action === "unfollow") {
+						button.classList.remove("followed");
+						button.classList.add("not-followed");
+						button.parentNode
+							.querySelector(".followerStatus")
+							.classList.remove("fa-user-check");
+						button.parentNode
+							.querySelector(".followerStatus")
+							.classList.add("fa-user-plus");
+					}
+				} else if (xhr.responseText === "login") {
+					alert("Please login to perform this action");
+				} else {
+					alert("Something went wrong: " + xhr.responseText);
+				}
+			}
+		};
+		xhr.send("author=" + author + "&action=" + action);
+	});
+});
+
+/*  ---------------------------------------------------------------------------- */
+
+/*  Hamburger Menu Code */
 var nav = document.querySelector(".nav-links");
 document.addEventListener("DOMContentLoaded", function () {
 	var hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -80,6 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 });
+
+/*  ---------------------------------------------------------------------------- */
+
+/*  Sub menu Code */
 let menu = document.getElementById("subMenu");
 let img = document.getElementById("userProfile");
 img.addEventListener("click", () => {
@@ -90,3 +151,4 @@ document.addEventListener("click", function (event) {
 		return;
 	menu.classList.remove("extend");
 });
+/*  ---------------------------------------------------------------------------- */
